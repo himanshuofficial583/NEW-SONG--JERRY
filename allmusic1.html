@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Music | MUSIC WORLD</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at center, #000000 60%, #1a0000 100%);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 100px;
+      color: red;
+      text-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .track-card {
+      background: rgba(255, 0, 0, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .track-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+    }
+
+    .track-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .track-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: red;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+    }
+
+    .track-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .track-links a {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .track-links a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+    }
+
+    .insta { background-color: #e1306c; }
+    .youtube { background-color: #ff0000; }
+    .spotify { background-color: #1DB954; }
+    .apple { background-color: #FA233B; }
+
+    /* Navigation buttons */
+    .nav-btn {
+      position: fixed;
+      top: 20px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      background: rgba(255, 0, 0, 0.8);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+    }
+
+    .back-btn { left: 20px; }
+    .bloodhunt-btn { right: 20px; }
+
+    @media (max-width: 768px) {
+      .nav-btn {
+        top: 10px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      .back-btn { left: 10px; }
+      .bloodhunt-btn { right: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <a href="index.html" class="nav-btn back-btn">BACK TO HOME</a>
+  <a href="bloodhunt.html" class="nav-btn bloodhunt-btn">BLOOD HUNT RECORD</a>
+
+  <h1>ALL MUSIC</h1>
+
+  <div class="music-grid">
+    <!-- Example Track Card -->
+   <div class="track-card">
+  <a href="https://youtu.be/WRYCt4vU7Sk?si=zXMWkPAIysoPlZnd" target="_blank">
+    <img src="https://i.ytimg.com/vi/WRYCt4vU7Sk/hqdefault.jpg" alt="Mai Hu Rapking | Jerry Verma" />
+  </a>
+  <div class="track-title">Mai Hu Rapking – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/WRYCt4vU7Sk?si=zXMWkPAIysoPlZnd" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/IEJF-HkMFaE?si=XbGutnwCmYst_KHJ" target="_blank">
+    <img src="https://i.ytimg.com/vi/IEJF-HkMFaE/hqdefault.jpg" alt="Mai Hu Rapking 2 | Jerry Verma" />
+  </a>
+  <div class="track-title">Mai Hu Rapking 2 – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/IEJF-HkMFaE?si=XbGutnwCmYst_KHJ" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/u0uHdo44SLw?si=pEaLw4yoX3BzCkUW" target="_blank">
+    <img src="https://i.ytimg.com/vi/u0uHdo44SLw/hqdefault.jpg" alt="Mai Hu Rapking 3 | Jerry Verma" />
+  </a>
+  <div class="track-title">Mai Hu Rapking 3 – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/u0uHdo44SLw?si=pEaLw4yoX3BzCkUW" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/N7BjGdYiLWg?si=sMK87Lo4diCd8Dpf" target="_blank">
+    <img src="https://i.ytimg.com/vi/N7BjGdYiLWg/hqdefault.jpg" alt="You Took Me Home | Jerry Verma" />
+  </a>
+  <div class="track-title">You Took Me Home – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/N7BjGdYiLWg?si=sMK87Lo4diCd8Dpf" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/_nfyGXM2dow?si=kmAnwvhO0q1inR_H" target="_blank">
+    <img src="https://i.ytimg.com/vi/_nfyGXM2dow/hqdefault.jpg" alt="You’ll Remember Me Then | Jerry Verma" />
+  </a>
+  <div class="track-title">You’ll Remember Me Then – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/_nfyGXM2dow?si=kmAnwvhO0q1inR_H" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/wbcIoyae5eo?si=VAc0PeXSY3BX5LSK" target="_blank">
+    <img src="https://i.ytimg.com/vi/wbcIoyae5eo/hqdefault.jpg" alt="You Only Lose It Once | Jerry Verma" />
+  </a>
+  <div class="track-title">You Only Lose It Once – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/wbcIoyae5eo?si=VAc0PeXSY3BX5LSK" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/7UOrFF0GN-Q?si=pazW9PR2EL9IyfiG" target="_blank">
+    <img src="https://i.ytimg.com/vi/7UOrFF0GN-Q/hqdefault.jpg" alt="A Pillow of Tears | Jerry Verma" />
+  </a>
+  <div class="track-title">A Pillow of Tears – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/7UOrFF0GN-Q?si=pazW9PR2EL9IyfiG" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/BdaJMhtaq74?si=wILVhlnkA1uwxpgF" target="_blank">
+    <img src="https://i.ytimg.com/vi/BdaJMhtaq74/hqdefault.jpg" alt="JERRYTAPE 2K25 | Jerry Verma" />
+  </a>
+  <div class="track-title">JERRYTAPE 2K25 – Jerry Verma</div>
+  <div class="track-links">
+    <a href="https://youtu.be/BdaJMhtaq74?si=wILVhlnkA1uwxpgF" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/yY59Xip3NIg?si=hg7joG6Q8CqHx3Y5" target="_blank">
+    <img src="https://i.ytimg.com/vi/yY59Xip3NIg/hqdefault.jpg" alt="You | Jerry Verma" />
+  </a>
+  <div class="track-title">You – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/yY59Xip3NIg?si=hg7joG6Q8CqHx3Y5" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/K4P1gU6-yTg?si=-4qSTd2uiGV7gb93" target="_blank">
+    <img src="https://i.ytimg.com/vi/K4P1gU6-yTg/hqdefault.jpg" alt="Jerry Verma Track" />
+  </a>
+  <div class="track-title">Jerry Verma – Track from JERRYTAPE 2K25</div>
+  <div class="track-links">
+    <a href="https://youtu.be/K4P1gU6-yTg?si=-4qSTd2uiGV7gb93" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/5eMAkJ76UtE?si=oK6EF1s40SgDdKMh" target="_blank">
+    <img src="https://i.ytimg.com/vi/5eMAkJ76UtE/hqdefault.jpg" alt="Jerry Verma Track" />
+  </a>
+  <div class="track-title">Jerry Verma – Track from JERRYTAPE 2K25</div>
+  <div class="track-links">
+    <a href="https://youtu.be/5eMAkJ76UtE?si=oK6EF1s40SgDdKMh" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/W3nnN-PJU0A?si=qW4QVDdGXT1Yxjcu" target="_blank">
+    <img src="https://i.ytimg.com/vi/W3nnN-PJU0A/hqdefault.jpg" alt="You Gotta Hold of Me | Jerry Verma" />
+  </a>
+  <div class="track-title">You Gotta Hold of Me – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/W3nnN-PJU0A?si=qW4QVDdGXT1Yxjcu" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<div class="track-card">
+  <a href="https://youtu.be/hTvR9sS4xe0?si=4eSIJWBBQbzmkP6r" target="_blank">
+    <img src="https://i.ytimg.com/vi/hTvR9sS4xe0/hqdefault.jpg" alt="You’re Not the Same | Jerry Verma" />
+  </a>
+  <div class="track-title">You’re Not the Same – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/hTvR9sS4xe0?si=4eSIJWBBQbzmkP6r" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<!-- Track: You’re Not the Same -->
+<div class="track-card">
+  <a href="https://youtu.be/hTvR9sS4xe0?si=4eSIJWBBQbzmkP6r" target="_blank">
+    <img src="https://i.ytimg.com/vi/hTvR9sS4xe0/hqdefault.jpg" alt="You’re Not the Same | Jerry Verma" />
+  </a>
+  <div class="track-title">You’re Not the Same – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/hTvR9sS4xe0?si=4eSIJWBBQbzmkP6r" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+
+<!-- Track: You Can’t Tell -->
+<div class="track-card">
+  <a href="https://youtu.be/K1x1nfyeM6Y?si=P9yG3HsTsRhNdooI" target="_blank">
+    <img src="https://i.ytimg.com/vi/K1x1nfyeM6Y/hqdefault.jpg" alt="You Can’t Tell | Jerry Verma" />
+  </a>
+  <div class="track-title">You Can’t Tell – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/K1x1nfyeM6Y?si=P9yG3HsTsRhNdooI" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+
+<!-- Track: Without You -->
+<div class="track-card">
+  <a href="https://youtu.be/LHxb4Ag4jBs?si=PBH_Ob9PwSLWRqW8" target="_blank">
+    <img src="https://i.ytimg.com/vi/LHxb4Ag4jBs/hqdefault.jpg" alt="Without You | Jerry Verma" />
+  </a>
+  <div class="track-title">Without You – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/LHxb4Ag4jBs?si=PBH_Ob9PwSLWRqW8" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+<!-- Track: Who’s Gonna Save Me – Jerry Verma -->
+<div class="track-card">
+  <a href="https://youtu.be/ZR_BHxsI_9o?si=dFg-GywB6emdVn5E" target="_blank">
+    <img src="https://i.ytimg.com/vi/ZR_BHxsI_9o/hqdefault.jpg" alt="Who’s Gonna Save Me | Jerry Verma" />
+  </a>
+  <div class="track-title">Who’s Gonna Save Me – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/ZR_BHxsI_9o?si=dFg-GywB6emdVn5E" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+
+<!-- Track: Who Knows – Jerry Verma -->
+<div class="track-card">
+  <a href="https://youtu.be/ubUdef6QoEw?si=QUlhPMdgwKIHXy6n" target="_blank">
+    <img src="https://i.ytimg.com/vi/ubUdef6QoEw/hqdefault.jpg" alt="Who Knows | Jerry Verma" />
+  </a>
+  <div class="track-title">Who Knows – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/ubUdef6QoEw?si=QUlhPMdgwKIHXy6n" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+
+<!-- Track: Who Do You Think You Are – Jerry Verma -->
+<div class="track-card">
+  <a href="https://youtu.be/fco6O6B5WVI?si=hEWTGYNT_FNphfUm" target="_blank">
+    <img src="https://i.ytimg.com/vi/fco6O6B5WVI/hqdefault.jpg" alt="Who Do You Think You Are | Jerry Verma" />
+  </a>
+  <div class="track-title">Who Do You Think You Are – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/fco6O6B5WVI?si=hEWTGYNT_FNphfUm" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+
+<!-- Track: Where Do We Go From Here – Jerry Verma -->
+<div class="track-card">
+  <a href="https://youtu.be/_eLp7aovCSU?si=yly6udz5zhx17o3t" target="_blank">
+    <img src="https://i.ytimg.com/vi/_eLp7aovCSU/hqdefault.jpg" alt="Where Do We Go From Here | Jerry Verma" />
+  </a>
+  <div class="track-title">Where Do We Go From Here – Jerry Verma (JERRYTAPE 2K25)</div>
+  <div class="track-links">
+    <a href="https://youtu.be/_eLp7aovCSU?si=yly6udz5zhx17o3t" target="_blank" class="youtube">Watch on YouTube</a>
+  </div>
+</div>
+
+
+
+    <!-- Add more track cards as needed -->
+  </div>
+</body>
+</html>
