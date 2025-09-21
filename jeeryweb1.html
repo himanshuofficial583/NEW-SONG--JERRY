@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JERRY1</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
       background-color: black;
       color: white;
-      font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: center;
       text-align: center;
+      padding: 20px;
     }
 
     h1 {
@@ -31,10 +36,10 @@
       font-weight: bold;
       color: white;
       text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      margin-bottom: 30px;
     }
 
     .back-btn {
-      margin-top: 40px;
       padding: 15px 40px;
       font-size: 1.2rem;
       background-color: red;
@@ -49,6 +54,22 @@
     .back-btn:hover {
       transform: scale(1.05);
       box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+    }
+
+    /* Responsive tweaks for smaller screens */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      .back-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
