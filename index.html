@@ -41,14 +41,12 @@
     }
 
     .circle-img {
-  width: 300px;
-  height: 300px;
-  /* Removed border-radius to make it a box */
-  background: url('image2.jpg') no-repeat center center/cover;
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
-  animation: fadeInUp 1s ease-out forwards;
-}
-
+      width: 300px;
+      height: 300px;
+      /* Box shape */
+      background: url('image2.jpg') no-repeat center center/cover;
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+      animation: fadeInUp 1s ease-out forwards;
     }
 
     .info-btn {
@@ -67,6 +65,7 @@
       display: inline-block;
       animation: fadeInUp 1s ease-out forwards;
       animation-delay: 0.5s;
+      animation-fill-mode: forwards;
       opacity: 0;
     }
 
@@ -82,6 +81,7 @@
       color: white;
       animation: fadeInUp 1s ease-out forwards;
       animation-delay: 1s;
+      animation-fill-mode: forwards;
       opacity: 0;
     }
 
@@ -111,5 +111,3 @@
   </footer>
 </body>
 </html>
-
-
