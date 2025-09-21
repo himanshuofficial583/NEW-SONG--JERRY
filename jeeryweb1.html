@@ -25,44 +25,33 @@
     }
 
     @keyframes fadeSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
-      }
-      50% {
-        box-shadow: 0 0 50px rgba(255, 0, 0, 1);
-      }
-      100% {
-        box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
-      }
+      0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); }
+      50% { box-shadow: 0 0 50px rgba(255, 0, 0, 1); }
+      100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); }
     }
 
     @keyframes slideInLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      0% { opacity: 0; transform: translateX(-50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .page-wrapper {
+      padding-top: 80px; /* Prevents overlap with fixed back button */
+      animation: fadeSlideUp 1s ease-out forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+      width: 100%;
     }
 
     h1 {
       font-size: 3rem;
       color: red;
       text-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
-      animation: fadeSlideUp 1s ease-out forwards;
     }
 
     p {
@@ -71,9 +60,6 @@
       color: white;
       text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
       margin: 25px 0;
-      animation: fadeSlideUp 1s ease-out forwards;
-      animation-delay: 0.3s;
-      opacity: 0;
     }
 
     .artist-section {
@@ -90,9 +76,15 @@
       width: 300px;
       height: 300px;
       border-radius: 20px;
-      background: url('image1.jpg') no-repeat center center/cover;
+      overflow: hidden;
       animation: pulseGlow 2s infinite;
       flex-shrink: 0;
+    }
+
+    .artist-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .artist-info {
@@ -143,13 +135,10 @@
       box-shadow: 0 0 30px rgba(255, 0, 0, 1);
     }
 
-    .insta {
-      background-color: #e1306c;
-    }
-
-    .youtube {
-      background-color: #ff0000;
-    }
+    .insta { background-color: #e1306c; }
+    .youtube { background-color: #ff0000; }
+    .spotify { background-color: #1DB954; }
+    .apple { background-color: #FA233B; }
 
     .back-btn {
       position: fixed;
@@ -180,9 +169,6 @@
       text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
       letter-spacing: 1px;
       font-weight: bold;
-      animation: fadeSlideUp 1s ease-out forwards;
-      animation-delay: 1.4s;
-      opacity: 0;
     }
 
     .footer-link {
@@ -198,58 +184,51 @@
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem;
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1.2rem; }
+      .artist-section { flex-direction: column; text-align: center; }
+      .artist-info { text-align: center; align-items: center; }
+      .artist-pic { width: 250px; height: 250px; }
+      .social-buttons { justify-content: center; }
+      .back-btn {
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
       }
-
-      p {
-        font-size: 1.2rem;
-      }
-
-      .artist-section {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .artist-info {
-        text-align: center;
-        align-items: center;
-      }
-
-      .artist-pic {
-        width: 250px;
-        height: 250px;
-      }
-
-      .social-buttons {
-        justify-content: center;
+      .page-wrapper {
+        padding-top: 100px;
       }
     }
   </style>
 </head>
 <body>
-  <a href="index.html" class="back-btn">BACK TO HOME</a>
+  <div class="page-wrapper">
+    <a href="index.html" class="back-btn">BACK TO HOME</a>
 
-  <h1>WELCOME TO MUSIC WORLD</h1>
-  <p>COMING SOON</p>
+    <h1>WELCOME TO MUSIC WORLD</h1>
+    <p>COMING SOON</p>
 
-  <div class="artist-section">
-    <div class="artist-pic"></div>
-    <div class="artist-info">
-      <h2>JERRY VERMA</h2>
-      <p>
-        Welcome TO My Official Web Page. This Website Tells You Every New Update.
-      </p>
+    <div class="artist-section">
+      <div class="artist-pic">
+        <img src="image1.jpg" alt="Jerry Verma" class="artist-img" />
+      </div>
+      <div class="artist-info">
+        <h2>JERRY VERMA</h2>
+        <p>Welcome to my official web page. Stay tuned for every new update.</p>
 
-      <div class="social-buttons">
-        <a href="https://www.instagram.com/bloodhunt_records?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-btn insta">INSTAGRAM</a>
-        <a href="https://youtube.com/@bloodhuntecord?si=phqpD6JMCkP0PGU_" target="_blank" class="social-btn youtube">YOUTUBE</a>
+        <div class="social-buttons">
+          <a href="https://www.instagram.com/bloodhunt_records" target="_blank" class="social-btn insta">INSTAGRAM</a>
+          <a href="https://youtube.com/@bloodhuntecord" target="_blank" class="social-btn youtube">YOUTUBE</a>
+          <a href="https://open.spotify.com/track/6gRx0tQHB8Pe7Z1YyvqlIK?si=Qa1ICqzZQACrxC16Z2u_DQ%0A" target="_blank" class="social-btn spotify">SPOTIFY</a>
+          <a href="https://music.apple.com/artist/yourid" target="_blank" class="social-btn apple">APPLE MUSIC</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="made-by">
-    Made by <a href="https://www.instagram.com/himanshuofficial583?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="footer-link">himanshuofficial583</a>
+    <div class="made-by">
+      Made by <a href="https://www.instagram.com/himanshuofficial583" target="_blank" class="footer-link">himanshuofficial583</a>
+    </div>
   </div>
 </body>
 </html>
