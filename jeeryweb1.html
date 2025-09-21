@@ -24,14 +24,37 @@
       overflow-x: hidden;
     }
 
-    @keyframes fadeZoom {
+    @keyframes fadeSlideUp {
       0% {
         opacity: 0;
-        transform: scale(0.8) translateY(30px);
+        transform: translateY(30px);
       }
       100% {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 50px rgba(255, 0, 0, 1);
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
 
@@ -39,7 +62,7 @@
       font-size: 3rem;
       color: red;
       text-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
-      animation: fadeZoom 1s ease-out forwards;
+      animation: fadeSlideUp 1s ease-out forwards;
     }
 
     p {
@@ -48,7 +71,7 @@
       color: white;
       text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
       margin: 25px 0;
-      animation: fadeZoom 1s ease-out forwards;
+      animation: fadeSlideUp 1s ease-out forwards;
       animation-delay: 0.3s;
       opacity: 0;
     }
@@ -57,63 +80,124 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 30px;
-      margin-top: 50px;
+      gap: 40px;
+      margin-top: 60px;
       flex-wrap: wrap;
-      animation: fadeZoom 1s ease-out forwards;
-      animation-delay: 0.8s;
-      opacity: 0;
+      max-width: 1000px;
     }
 
     .artist-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 10px;
-      background: url('image1.jpg') no-repeat center center/cover;
-      box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      background: url('artist.jpg') no-repeat center center/cover;
+      animation: pulseGlow 2s infinite;
+      flex-shrink: 0;
     }
 
     .artist-info {
-      max-width: 400px;
+      max-width: 600px;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      animation: slideInLeft 1s ease-out forwards;
+      animation-delay: 0.6s;
+      opacity: 0;
     }
 
     .artist-info h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: red;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
     }
 
     .artist-info p {
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.8;
       color: white;
     }
 
+    .social-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .social-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+    }
+
+    .insta {
+      background-color: #e1306c;
+    }
+
+    .youtube {
+      background-color: #ff0000;
+    }
+
     .back-btn {
-      margin-top: 50px;
-      padding: 15px 40px;
-      font-size: 1.2rem;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 12px 25px;
+      font-size: 1rem;
       background: rgba(255, 0, 0, 0.8);
       color: white;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
       text-decoration: none;
       backdrop-filter: blur(5px);
       transition: transform 0.2s ease, box-shadow 0.3s ease;
-      animation: fadeZoom 1s ease-out forwards;
-      animation-delay: 1.2s;
-      opacity: 0;
+      z-index: 1000;
     }
 
     .back-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 35px rgba(255, 0, 0, 1);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 1);
     }
 
-    @media (max-width: 600px) {
+    .made-by {
+      margin-top: 80px;
+      font-size: 1rem;
+      color: white;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+      letter-spacing: 1px;
+      font-weight: bold;
+      animation: fadeSlideUp 1s ease-out forwards;
+      animation-delay: 1.4s;
+      opacity: 0;
+    }
+
+    .footer-link {
+      color: red;
+      text-decoration: none;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: white;
+      text-shadow: 0 0 20px rgba(255, 0, 0, 1);
+    }
+
+    @media (max-width: 768px) {
       h1 {
         font-size: 2.2rem;
       }
@@ -129,16 +213,23 @@
 
       .artist-info {
         text-align: center;
+        align-items: center;
       }
 
-      .back-btn {
-        padding: 12px 30px;
-        font-size: 1rem;
+      .artist-pic {
+        width: 250px;
+        height: 250px;
+      }
+
+      .social-buttons {
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
+  <a href="index.html" class="back-btn">BACK TO HOME</a>
+
   <h1>WELCOME TO MUSIC WORLD</h1>
   <p>COMING SOON</p>
 
@@ -147,11 +238,18 @@
     <div class="artist-info">
       <h2>JERRY VERMA</h2>
       <p>
-       Welcome TO My Official Web Page This Website Tell You Every New Update 
+        Welcome TO My Official Web Page. This Website Tells You Every New Update.
       </p>
+
+      <div class="social-buttons">
+        <a href="https://www.instagram.com/bloodhunt_records?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-btn insta">INSTAGRAM</a>
+        <a href="https://youtube.com/@bloodhuntecord?si=phqpD6JMCkP0PGU_" target="_blank" class="social-btn youtube">YOUTUBE</a>
+      </div>
     </div>
   </div>
 
-  <a href="index.html" class="back-btn">BACK TO HOME</a>
+  <div class="made-by">
+    Made by <a href="https://www.instagram.com/himanshuofficial583?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="footer-link">himanshuofficial583</a>
+  </div>
 </body>
 </html>
