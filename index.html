@@ -2,106 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>JERRY Intro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEERY Page</title>
   <style>
-    body {
+    * {
       margin: 0;
-      background: radial-gradient(circle at center, #111 0%, #000 100%);
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
       overflow: hidden;
-      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Impact', sans-serif;
     }
 
     .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      animation: fadeIn 2s ease-out forwards;
     }
 
-    .name-main {
-      font-size: 120px;
-      color: #e0a800;
-      text-shadow: 0 0 10px #aa3300, 0 0 20px #552200;
-      animation: pulse 2s infinite ease-in-out;
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
-    .name-sub {
-      font-size: 40px;
-      color: #00cccc;
-      text-shadow: 0 0 5px #006666, 0 0 10px #003333;
-      margin-top: -20px;
-      animation: fadeInSub 3s ease-out forwards;
-      text-transform: uppercase;
+    .circle-img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: url('image1.jpg') no-repeat center center/cover;
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+      animation: fadeInUp 1s ease-out forwards;
     }
 
-    .popup {
+    .info-btn {
       margin-top: 40px;
-      background: #111;
-      border: 2px solid #ffcc00;
-      padding: 30px 50px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #ffcc00;
-      animation: fadeInPopup 1s ease-out, pulsePopup 2s infinite ease-in-out;
+      padding: 25px 60px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      background-color: red;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.7), inset 0 -5px 0 rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
+    }
+
+    .info-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 0, 0, 1), inset 0 -5px 0 rgba(0, 0, 0, 0.6);
+    }
+
+    /* Footer with link */
+    footer {
       text-align: center;
+      padding: 15px;
+      font-size: 1rem;
+      color: white;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 1s;
+      opacity: 0;
     }
 
-    .popup h1 {
-      font-size: 50px;
-      color: #ffcc00;
-      margin: 0;
-      text-shadow: 0 0 10px #aa3300;
+    footer a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+      transition: color 0.3s ease;
     }
 
-    .popup p {
-      font-size: 24px;
-      color: #00ffff;
-      margin-top: 10px;
-      text-shadow: 0 0 5px #006666;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        text-shadow: 0 0 10px #aa3300, 0 0 20px #552200;
-      }
-      50% {
-        transform: scale(1.05);
-        text-shadow: 0 0 15px #cc4400, 0 0 25px #773300;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInSub {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInPopup {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes pulsePopup {
-      0%, 100% { box-shadow: 0 0 20px #ffcc00; }
-      50% { box-shadow: 0 0 40px #ffaa00; }
+    footer a:hover {
+      color: white;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="name-main">JERRY</div>
-    <div class="name-sub">HIMANSHUOFFICIAL583</div>
+    <div class="circle-img"></div>
+    <button class="info-btn">JEERY</button>
   </div>
-  <div class="popup">
-    <h1>NEW SONG COMING</h1>
-    <p>GAME CHANGER</p>
-  </div>
+  <footer>
+    <a href="https://www.instagram.com/himanshuofficial583?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+      MADE BY HIMANSHUOFFICIAL583
+    </a>
+  </footer>
 </body>
 </html>
