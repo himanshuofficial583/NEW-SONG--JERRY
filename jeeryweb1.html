@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JERRY1</title>
+  <title>MUSIC WORLD</title>
   <style>
     * {
       margin: 0;
@@ -14,49 +14,105 @@
     body, html {
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background-color: black;
+      background: radial-gradient(circle at center, #000000 60%, #1a0000 100%);
       color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       text-align: center;
       padding: 20px;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeZoom {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     h1 {
       font-size: 3rem;
       color: red;
-      text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
-      margin-bottom: 20px;
+      text-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+      animation: fadeZoom 1s ease-out forwards;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: bold;
       color: white;
       text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-      margin-bottom: 30px;
+      margin: 25px 0;
+      animation: fadeZoom 1s ease-out forwards;
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+
+    .artist-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      animation: fadeZoom 1s ease-out forwards;
+      animation-delay: 0.8s;
+      opacity: 0;
+    }
+
+    .artist-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      background: url('artist.jpg') no-repeat center center/cover;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+    }
+
+    .artist-info {
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .artist-info h2 {
+      font-size: 2rem;
+      color: red;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+    }
+
+    .artist-info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: white;
     }
 
     .back-btn {
+      margin-top: 50px;
       padding: 15px 40px;
       font-size: 1.2rem;
-      background-color: red;
+      background: rgba(255, 0, 0, 0.8);
       color: white;
       border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
       text-decoration: none;
-      transition: transform 0.2s ease;
+      backdrop-filter: blur(5px);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      animation: fadeZoom 1s ease-out forwards;
+      animation-delay: 1.2s;
+      opacity: 0;
     }
 
     .back-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+      box-shadow: 0 0 35px rgba(255, 0, 0, 1);
     }
 
-    /* Responsive tweaks for smaller screens */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.2rem;
@@ -64,6 +120,15 @@
 
       p {
         font-size: 1.2rem;
+      }
+
+      .artist-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .artist-info {
+        text-align: center;
       }
 
       .back-btn {
@@ -76,6 +141,17 @@
 <body>
   <h1>WELCOME TO MUSIC WORLD</h1>
   <p>COMING SOON</p>
+
+  <div class="artist-section">
+    <div class="artist-pic"></div>
+    <div class="artist-info">
+      <h2>JERRY VERMA</h2>
+      <p>
+       Welcome TO My Official Web Page This Website Tell You Every New Update 
+      </p>
+    </div>
+  </div>
+
   <a href="index.html" class="back-btn">BACK TO HOME</a>
 </body>
 </html>
