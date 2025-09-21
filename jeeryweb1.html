@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MUSIC WORLD</title>
+  <title>bloodhunt_records</title>
   <style>
     * {
       margin: 0;
@@ -30,9 +30,8 @@
     }
 
     @keyframes pulseGlow {
-      0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); }
+      0%, 100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); }
       50% { box-shadow: 0 0 50px rgba(255, 0, 0, 1); }
-      100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); }
     }
 
     @keyframes slideInLeft {
@@ -41,7 +40,7 @@
     }
 
     .page-wrapper {
-      padding-top: 80px; /* Prevents overlap with fixed back button */
+      padding-top: 80px;
       animation: fadeSlideUp 1s ease-out forwards;
       animation-delay: 0.2s;
       opacity: 0;
@@ -129,6 +128,36 @@
       transition: transform 0.2s ease, box-shadow 0.3s ease;
       backdrop-filter: blur(5px);
     }
+    .all-music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  text-decoration: none;
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.all-music-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+}
+
+@media (max-width: 768px) {
+  .all-music-btn {
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
 
     .social-btn:hover {
       transform: scale(1.05);
@@ -205,8 +234,9 @@
 <body>
   <div class="page-wrapper">
     <a href="index.html" class="back-btn">BACK TO HOME</a>
+      <a href="all-music.html" class="all-music-btn">ALL MUSIC</a>
 
-    <h1>WELCOME TO MUSIC WORLD</h1>
+    <h1>BLOOD HUNT RECORD</h1>
     <p>COMING SOON</p>
 
     <div class="artist-section">
@@ -220,7 +250,7 @@
         <div class="social-buttons">
           <a href="https://www.instagram.com/bloodhunt_records" target="_blank" class="social-btn insta">INSTAGRAM</a>
           <a href="https://youtube.com/@bloodhuntecord" target="_blank" class="social-btn youtube">YOUTUBE</a>
-          <a href="https://open.spotify.com/track/6gRx0tQHB8Pe7Z1YyvqlIK?si=Qa1ICqzZQACrxC16Z2u_DQ%0A" target="_blank" class="social-btn spotify">SPOTIFY</a>
+          <a href="https://open.spotify.com/track/6gRx0tQHB8Pe7Z1YyvqlIK" target="_blank" class="social-btn spotify">SPOTIFY</a>
           <a href="https://music.apple.com/artist/yourid" target="_blank" class="social-btn apple">APPLE MUSIC</a>
         </div>
       </div>
